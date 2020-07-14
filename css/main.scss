@@ -1,25 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 
-:root {
-    --lightGrayish: #D8D0C1;
-    --primaryRedPink: #E54B4B;
+a {
+    text-decoration: none !important;
 }
 
-// $theme-colors: ("primary": --primaryRedPink,
-$theme-colors: ("primary": #E54B4B,
-    "secondary": #663A2B,
-    "dark": #020202);
-
 body {
+    background: url(/images/jp-build.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--lightGrayish) !important;
     font-family: 'Permanent Marker', cursive !important;
 }
 
 
-a {
-    text-decoration: none !important;
+:root {
+    --lightGrayish: #D8D0C1;
+    --primaryRedPink: #E54B4B;
 }
+
+$theme-colors: ("primary": #E54B4B,
+    "secondary": #663A2B,
+    "dark": #020202);
+
 
 
 /*==================
@@ -28,14 +33,15 @@ info
 
 .info {
     background-color: var(--lightGrayish);
-}
 
-.info a {
-    transition: ease-in-out 2s;
-}
+    a {
+        transition: ease-in-out 1s;
 
-.info a:hover {
-    color: black;
+        &:hover {
+            color: black;
+
+        }
+    }
 }
 
 
@@ -44,18 +50,20 @@ info
 Header
 ===================*/
 
-.banner h1 {
-    animation: lefty;
-    animation-delay: 2s;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    border-bottom: 6px dotted var(--lightGrayish);
-    border-top: 6px dotted var(--lightGrayish);
-    opacity: 0;
+.banner {
+    h1 {
+        animation: introLeft;
+        animation-delay: 2s;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        border-bottom: 6px dotted var(--lightGrayish);
+        border-top: 6px dotted var(--lightGrayish);
+        opacity: 0;
+    }
 }
 
 
-@keyframes lefty {
+@keyframes introLeft {
     0% {
         opacity: 0;
         transform: translateX(-100px);
@@ -83,25 +91,64 @@ Header
     position: relative;
 }
 
+@keyframes bouncy {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
 .header-link {
+    animation: bouncy;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
     background-color: var(--lightGrayish) !important;
     border-radius: 10px;
+    color: var(--primaryRedPink) !important;
     bottom: 5%;
     display: inline-block;
     left: 50%;
     position: absolute;
     transition: all 2s ease;
+
+    &:hover {
+        background-color: var(--primaryRedPink) !important;
+        color: var(--lightGrayish) !important;
+    }
 }
 
-.height-90 {
-    min-height: calc(100vh - 95px);
+@keyframes introBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
 
+    50% {
+        transform: translateY(-25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
 
 .main-btn {
+    animation: introBottom;
+    animation-delay: 2s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
     border: 2px solid var(--primaryRedPink) !important;
     font-size: 2rem !important;
+    opacity: 0;
     transition: all 1s ease-in-out !important;
 }
 
@@ -111,5 +158,60 @@ Header
     color: black;
 
 }
+
+.textMid {
+    min-height: calc(100vh - 95px);
+
+}
+
+/*==================
+Menu Items
+===================*/
+
+.item-container {
+    background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+    overflow: hidden;
+    position: relative;
+    transition: all 2s ease;
+
+    &:hover {
+        outline: 10px solid var(--primaryRedPink);
+        outline-offset: 0.6rem;
+    }
+
+    .item-link {
+        border-bottom: 3px solid var(--primaryRedPink);
+        border-top: 3px solid var(--primaryRedPink);
+        font-size: 2.5rem;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 2s ease;
+
+        &:hover {
+            border: 3px solid var(--lightGrayish);
+            color: var(--lightGrayish);
+        }
+    }
+
+    &:hover .item-link {
+        opacity: 1;
+    }
+
+    img {
+        transition: all 2s ease;
+    }
+
+    &:hover img {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+
+
+}
+
+
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
