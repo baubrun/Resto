@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+:root {
+    --lightGrayish: #D8D0C1;
+    --primaryRedPink: #E54B4B;
+}
+
+// $theme-colors: ("primary": --primaryRedPink,
+$theme-colors: ("primary": #E54B4B,
+    "secondary": #663A2B,
+    "dark": #020202);
+
+body {
+    color: var(--lightGrayish) !important;
+    font-family: 'Permanent Marker', cursive !important;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+
+/*==================
+info
+===================*/
+
+.info {
+    background-color: var(--lightGrayish);
+}
+
+.info a {
+    transition: ease-in-out 2s;
+}
+
+.info a:hover {
+    color: black;
+}
+
+
+
+/*==================
+Header
+===================*/
+
+.banner h1 {
+    animation: lefty;
+    animation-delay: 2s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    border-bottom: 6px dotted var(--lightGrayish);
+    border-top: 6px dotted var(--lightGrayish);
+    opacity: 0;
+}
+
+
+@keyframes lefty {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+#header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../images/banner.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: calc(100vh - 95px);
+    position: relative;
+}
+
+.header-link {
+    background-color: var(--lightGrayish) !important;
+    border-radius: 10px;
+    bottom: 5%;
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    transition: all 2s ease;
+}
+
+.height-90 {
+    min-height: calc(100vh - 95px);
+
+}
+
+
+.main-btn {
+    border: 2px solid var(--primaryRedPink) !important;
+    font-size: 2rem !important;
+    transition: all 1s ease-in-out !important;
+}
+
+.main-btn:hover {
+    background-color: var(--lightGrayish);
+    border: 2px solid var(--lightGrayish) !important;
+    color: black;
+
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
