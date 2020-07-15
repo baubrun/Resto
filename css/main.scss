@@ -13,8 +13,12 @@ body {
     background-size: cover;
     color: var(--lightGrayish) !important;
     font-family: 'Permanent Marker', cursive !important;
+    overflow-x: hidden !important;
 }
 
+html {
+    min-width: 100% !important;
+}
 
 :root {
     --lightGrayish: #D8D0C1;
@@ -81,7 +85,8 @@ Header
 
 
 #header {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background:
+        linear-gradient(to left rgba(83, 26, 26, 0.8), rgba(0, 0, 0, 0.8)),
         url(../images/banner.jpg);
     background-attachment: fixed;
     background-position: center;
@@ -208,9 +213,120 @@ Menu Items
         opacity: 0.5;
         transform: scale(1.2);
     }
+}
 
+
+#menu {
+    background: linear-gradient(rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)),
+        url(../images/banner.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
+
+
+.special {
+    border: 3px solid var(--primaryRedPink);
+    position: relative;
+}
+
+.special-text {
+    background-color: var(--primaryRedPink);
+    position: absolute;
+    top: 0;
+    right: 10%;
+}
+
+
+
+/*==================
+About 
+===================*/
+
+
+
+.about {
+    position: relative;
+}
+
+.about-img {
+    position: absolute;
+    opacity: 0.9;
+    transition: all 2s ease;
+    width: 150px;
+
+    &:hover {
+        opacity: 1;
+        outline: 10px solid var(--primaryRedPink);
+        outline-offset: 0.8rem;
+        transform: rotate(20deg) scale(1.2);
+        z-index: 30;
+    }
+}
+
+.about-imgs:hover .about-img:not(:hover) {
+    opacity: 0.5;
+}
+
+.about-text {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-right: 2rem;
+    padding: 5px 0;
+    text-align: center;
+
+}
+
+.img-1 {
+    left: 0;
+    top: 0;
+}
+
+.img-2 {
+    left: 20%;
+    top: 20%;
+    z-index: 10;
+}
+
+.img-3 {
+    left: 40%;
+    top: 40%;
+    z-index: 20;
+}
+
+.img-4 {
+    left: 40%;
+    top: 0;
+}
+
+.img-5 {
+    left: 0;
+    top: 40%;
+}
+
+
+
+/*==================
+Review 
+===================*/
+
+
+.review-img {
+    width: 150px;
+}
+
+.review-item {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+}
+
+
+
+
+// .embed-responsive-item {}
+
 
 
 
