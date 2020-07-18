@@ -364,10 +364,11 @@ Navigate Navbar
 ===================*/
 
 .navigate {
-    background-color: var(--lightGrayish);
+    background-color: var(--primaryRedPink);
     border-radius: 10px;
-    color: var(--primaryRedPink);
+    color: var(--lightGrayish);
     display: inline-block;
+    padding: 5px;
 }
 
 
@@ -378,10 +379,16 @@ Navigate Navbar
 }
 
 
-.order-nav {
-    background-color: var(--lightGrayish) !important;
+.nav-btn {
+    background-color: transparent;
     border: 2px solid var(--primaryRedPink) !important;
     font-size: 2rem !important;
+    &:hover {
+        color: black;
+        border: 2px solid var(--primaryRedPink);
+        transform: rotate(10deg);
+        transition: all 2s ease-in-out;
+    }
 }
 
 
@@ -391,6 +398,7 @@ Navigate Navbar
     padding: 20px 30px;
     transition: all 1s ease;
 }
+
 .navbar-background {
     padding: 5px 20px;
 }
@@ -407,10 +415,39 @@ Navigate Navbar
 .nav-link {
     color: black;
     font-size: 1.5rem;
-    transition: all 2s ease;
+    transition: all 1s ease;
     &:hover{
         color: var(--primaryRedPink)
     }
 }
+
+.toggler-btn {
+    border: 2px solid var(--primaryRedPink);
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 2s ease;
+}
+
+.bar{
+    background-color: var(--primaryRedPink);
+    height: 3px;
+    margin: 5px;
+    transition: all .5s ease;
+    width: 30px;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
